@@ -1,0 +1,20 @@
+<md-content style="margin-left: 40%; margin-top: 10%" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-input-container>
+            <label>Nome da Tarefa</label>
+            <input ng-model="vm.task_name">
+        </md-input-container>
+        <md-input-container>
+            <label>Descrição da Tarefa</label>
+            <input ng-model="vm.task_description">
+        </md-input-container>
+        <md-input-container>
+            <label>Deadline da Tarefa</label>
+            <input ng-model="vm.task_deadline" placeholder="YYYY/MM/DD">
+        </md-input-container>
+
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="vm.createTask(vm.task_name, vm.task_description, vm.task_deadline)">Salvar</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

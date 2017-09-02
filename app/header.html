@@ -1,0 +1,18 @@
+<md-toolbar md-colors="{background: 'blue-800'}" layout-wrap layout-align="center" layout="row">
+    <div class="md-toolbar-tools" flex="100" flex-lg=80 flex-xl="80">
+        <md-menu md-offset="0 -7">
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in ctrl.pages">
+                    <md-button ng-click="ctrl.goTo(item.state)"> <span md-menu-align-target>{{item.name}}</span></md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <h2 flex md-truncate>Todo List</h2>
+        <md-button class="md-icon-button" aria-label="Favorite" href="/api/logout">
+            <md-icon style="color: white;">account_circle</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>

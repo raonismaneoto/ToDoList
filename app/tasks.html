@@ -1,0 +1,26 @@
+
+<div ng-init="vm.loadTasks()">
+    <md-list flex>
+        <md-divider ></md-divider>
+        <md-subheader class="md-no-sticky">Tarefas</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="task in vm.tasks | orderBy:'deadline'" ng-click="null">
+            <div class="md-list-item-text">
+             <h2>{{task.name}}</h2>
+            </div>
+            <md-menu md-position-mode="target-right target">
+                <md-button ng-click="$mdMenu.open($event)" class="md-icon-button" aria-label="Open sample menu"><md-icon>more_vert</md-icon></md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button ng-click="vm.deleteTasks(task.id)">Deletar</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.viewTask(task.id)">Visualizar</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="vm.ediTask(task.id)">Editar</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-list-item>
+    </md-list>
+</div>

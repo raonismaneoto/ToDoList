@@ -1,0 +1,16 @@
+<md-content style="margin-left: 40%; margin-top: 10%" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-input-container>
+            <label>Campo</label>
+            <input ng-model="vm.edit_task.field" placeholder="name/description/deadline">
+        </md-input-container>
+        <md-input-container>
+            <label>Novo valor</label>
+            <input ng-model="vm.edit_task.value">
+        </md-input-container>
+
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="vm.changeTask(vm.edit_task)">Editar</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
